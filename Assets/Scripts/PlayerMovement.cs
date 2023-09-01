@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
-
     // Update is called once per frame
     private void Update()
     {
