@@ -14,7 +14,7 @@ public class Finnish : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
             finishSoundEffect.Play();
             // CompleteLevel();
