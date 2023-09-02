@@ -1,4 +1,4 @@
-# "PixelQuest: Adventure Awaits" - 2D Platformer
+# "HeroQuest: Adventure Awaits" - 2D Platformer
 Exhilarating 2D platformer game that takes players on an epic journey through a vibrant and challenging pixelated world.
 ## Project Description
 
