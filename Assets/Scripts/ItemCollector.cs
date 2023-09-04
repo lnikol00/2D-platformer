@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int cherries = 0;
-
-    public Text pointsText;
-
     public AudioSource collectSoundEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,8 +13,7 @@ public class ItemCollector : MonoBehaviour
         {
             collectSoundEffect.Play();
             Destroy(collision.gameObject);
-            cherries++;
-            pointsText.text = "Points: " + cherries;
+            GameManager.numberOfPoints++;
         }
     }
 }

@@ -30,6 +30,7 @@ public class PlayerLife : MonoBehaviour
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        GameManager.numberOfPoints = 0;
     }
 
     private void RestartLevel()
