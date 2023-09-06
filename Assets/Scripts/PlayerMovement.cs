@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-
         UpdateAnimationState();
     }
 
