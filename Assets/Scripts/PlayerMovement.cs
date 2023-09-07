@@ -15,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 7f;
     public float jumpForce = 7f;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private bool doubleJump;
+    private int airJumpCount;
+    private int airJumpCountMax;
+
+    private enum MovementState { idle, running, jumping, falling, doubleJump }
 
     public AudioSource jumpSoundEffect;
 
@@ -26,17 +30,39 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        airJumpCountMax = 1;
     }
     // Update is called once per frame
     private void Update()
     {
+        if(IsGrounded() && !Input.GetButtonDown("Jump"))
+        {
+            airJumpCount = 0;
+        }
+
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButton("Jump"))
         {
-            jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if(IsGrounded())
+            {
+                jumpSoundEffect.Play();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+            else
+            {
+                if(Input.GetButtonDown("Jump"))
+                {
+                    if(airJumpCount < airJumpCountMax)
+                    {
+                        jumpSoundEffect.Play();
+                        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                        airJumpCount++;
+                    }
+                }
+            }
         }
         UpdateAnimationState();
     }
@@ -63,10 +89,20 @@ public class PlayerMovement : MonoBehaviour
         if(rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
+
+            if(airJumpCount == 1)
+            {
+                 state = MovementState.doubleJump;
+            }
         }
         else if (rb.velocity.y < -.1f)
         {
             state = MovementState.falling;
+
+            if(airJumpCount == 1)
+            {
+                 state = MovementState.doubleJump;
+            }
         }
 
         anim.SetInteger("state", (int)state);
