@@ -10,6 +10,6 @@ NOTE: Game currently has 4 levels but you can add more.
 
 * "HeroQuest: Adventure Awaits" is a simple 2D platformer game built with Unity and C# programimg language.
 * The objective of the game is to complete all the levels, while avoiding various traps and collecting as much fruit as you cam
-* Contains feautures such as double-jump and wall jump.
+* Contains feautures such as double-jump.
 * You can select your hero.
 * Gameplay is featured in docs folder.
