@@ -1,4 +1,6 @@
 ![image](https://github.com/lnikol00/2D-platformer/assets/122328343/fc87e098-afaf-4888-b809-b00671959f0e)
+![image](https://github.com/lnikol00/2D-platformer/assets/122328343/b0b052ec-eead-4c8c-9561-53be22bdc94e)
+
 
 
 # "HeroQuest: Adventure Awaits" - 2D Platformer
