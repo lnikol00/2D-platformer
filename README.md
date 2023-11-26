@@ -1,4 +1,4 @@
-https://github.com/lnikol00/2D-platformer/blob/main/docs/image1.JPG?raw=true
+![image](https://github.com/lnikol00/2D-platformer/assets/122328343/6e64bf02-6bbb-4018-88d4-51450a7b9559)
 
 # "HeroQuest: Adventure Awaits" - 2D Platformer
 Exhilarating 2D platformer game that takes players on an epic journey through a vibrant and challenging pixelated world.
